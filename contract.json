@@ -1,0 +1,171 @@
+{
+  "model": "pleco-pii",
+  "pii_types": [
+    "access_token",
+    "account_number",
+    "age",
+    "bank_account",
+    "behavioral_profile",
+    "biometric_identifier",
+    "child_information",
+    "city",
+    "communications_metadata",
+    "credential",
+    "criminal_legal_information",
+    "customer_id",
+    "date",
+    "date_of_birth",
+    "device_id",
+    "email",
+    "employee_id",
+    "family_relationship",
+    "genetic_identifier",
+    "health_identifier",
+    "image_audio_video",
+    "income_information",
+    "ip_address",
+    "location",
+    "medical_condition",
+    "national_id",
+    "organization",
+    "other",
+    "payment_card",
+    "person_name",
+    "phone",
+    "postal_code",
+    "pseudonymous_identifier",
+    "quasi_identifier",
+    "sensitive_characteristic",
+    "street_address",
+    "username"
+  ],
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "spans": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "original_text": {
+              "type": "string"
+            },
+            "replacement": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "person_name",
+                "email",
+                "phone",
+                "street_address",
+                "city",
+                "postal_code",
+                "date",
+                "age",
+                "organization",
+                "account_number",
+                "national_id",
+                "bank_account",
+                "customer_id",
+                "payment_card",
+                "credential",
+                "access_token",
+                "employee_id",
+                "ip_address",
+                "device_id",
+                "location",
+                "date_of_birth",
+                "health_identifier",
+                "biometric_identifier",
+                "genetic_identifier",
+                "medical_condition",
+                "sensitive_characteristic",
+                "criminal_legal_information",
+                "username",
+                "quasi_identifier",
+                "income_information",
+                "image_audio_video",
+                "child_information",
+                "behavioral_profile",
+                "family_relationship",
+                "pseudonymous_identifier",
+                "communications_metadata",
+                "other"
+              ]
+            },
+            "pi_category": {
+              "type": "string",
+              "enum": [
+                "Names and direct personal identifiers",
+                "Contact details",
+                "Government-issued identification numbers",
+                "Financial identifiers and data",
+                "Authentication secrets and credentials",
+                "Biometric information",
+                "Genetic information",
+                "Health and wellbeing information",
+                "Sensitive personal characteristics",
+                "Criminal, legal and offence information",
+                "Online, device and technical identifiers",
+                "Location and movement data",
+                "Communications content and metadata",
+                "Quasi-identifiers and demographic data",
+                "Employment, education and income information",
+                "Images, audio and video",
+                "Children's and young people's information",
+                "Behavioural, inferred and profiling data",
+                "Family, relationship and third-party information",
+                "Pseudonymised and de-identified data",
+                "unknown"
+              ]
+            },
+            "criticality": {
+              "type": "string",
+              "enum": [
+                "L1",
+                "L2",
+                "L3",
+                "L4",
+                "L5",
+                "unknown"
+              ]
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "replacement_required": {
+              "enum": [
+                true,
+                false,
+                "review_required"
+              ]
+            }
+          },
+          "required": [
+            "original_text",
+            "replacement",
+            "kind",
+            "pi_category",
+            "criticality",
+            "confidence",
+            "replacement_required"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "text": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "spans",
+      "text"
+    ],
+    "additionalProperties": false
+  },
+  "system_prompt": "You are Pleco-PII. Apply rule PLECO-PI-001: find personal information (PI) in the user message and return only JSON with keys spans and text. Each span has original_text (exact substring), replacement (realistic synthetic value of the same type), kind, pi_category, criticality (L1-L5 or unknown), confidence (0-1) and replacement_required (true, false or \"review_required\"). text is the message with only those spans replaced; every other character stays identical. Keep amounts, operational dates, case status, technical terms, tone and meaning unchanged. If there is no PI, return an empty spans array and the unchanged message."
+}

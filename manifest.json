@@ -1,0 +1,42 @@
+{
+  "model": "pleco-pii",
+  "version": "v20261028-004012",
+  "created_at": "2026-10-28T05:49:35+00:00",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "knowledge_hash": "70a67a2b0031bbfabbd6ed62eed879976e296c464b3423b92574388e420b624c",
+  "custom_examples": 0,
+  "files": {
+    "pleco-pii.gguf": {
+      "sha256": "8f6d0b859c26e605387ec7a015d54993201ba9c1f3d70b18b1346cf9e00dfd89",
+      "bytes": 531067712
+    },
+    "Modelfile": {
+      "sha256": "3051ddcd73c9f6aef008f583e090a6d7fe39965fdc1b8ebe9e1a6cd6052d42cf",
+      "bytes": 870
+    },
+    "install.ps1": {
+      "sha256": "67d0d11b4785dd14f904d6b4b9a47990351d5f489760ff65422b5e4da2dd1952",
+      "bytes": 465
+    },
+    "install.sh": {
+      "sha256": "0c85f4ef135fee09e3149e8f5744ce31e7543c9219532308bfb89768ac481183",
+      "bytes": 447
+    },
+    "LICENSE-NOTICE.txt": {
+      "sha256": "34b7b88fa22bf3a3ed96119e83ea63009b22d6e617008448028b716f3d36995a",
+      "bytes": 604
+    },
+    "README.txt": {
+      "sha256": "ace8b75fb24d927873567c2dad1e4afe1f0f2537422ef4a25915fa3b8ecc2456",
+      "bytes": 640
+    },
+    "evaluation_report.json": {
+      "sha256": "eda3cf1c793a27f872c28b419ab29874804dcb42b67705053e468eed7cc8f95c",
+      "bytes": 3019
+    },
+    "contract.json": {
+      "sha256": "0e622beeace2aa47d8a78e38a886064e5c24107a6f3f3767c72e350a478137dc",
+      "bytes": 5374
+    }
+  }
+}

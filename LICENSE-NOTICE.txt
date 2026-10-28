@@ -1,0 +1,9 @@
+pleco-pii model notice
+======================
+This model is a LoRA fine-tune of Qwen2.5-0.5B-Instruct (Apache License 2.0, (c) Alibaba Cloud),
+merged and converted to GGUF with llama.cpp (MIT). Keep this notice when redistributing.
+Apache-2.0 text: https://www.apache.org/licenses/LICENSE-2.0
+
+It was trained on synthetic examples derived from the Pleco PII knowledge documents and any training JSON
+uploaded by the administrator. No source documents or personal data are included in this package.
+Review the training sources and your obligations before distributing the model outside your organisation.
